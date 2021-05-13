@@ -1,12 +1,13 @@
 const path = require("path");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+    context: path.resolve(__dirname,"src"),
     mode: "development",
     entry: {
-        main: "./src/index.js",
-        analytics: "./src/analytics.js"
+        main: "./index.js",
+        analytics: "./analytics.js"
     },
     output: {
         filename: "[name].[contenthash].js",
@@ -15,7 +16,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "Webpack NDLSS",
-            template: "./src/index.html"
+            template: "./index.html"
         }),
         new CleanWebpackPlugin()
     ]
