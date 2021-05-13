@@ -1,5 +1,5 @@
 const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -16,6 +16,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Webpack NDLSS",
             template: "./src/index.html"
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 }
