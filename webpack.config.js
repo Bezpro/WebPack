@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    context: path.resolve(__dirname,"src"),
+    context: path.resolve(__dirname, "src"),
     mode: "development",
     entry: {
         main: "./index.js",
@@ -19,5 +19,11 @@ module.exports = {
             template: "./index.html"
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    module: {
+        rules: [{
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"]
+        }]
+    }
 }
