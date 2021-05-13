@@ -1,9 +1,21 @@
 const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.js",
+    mode: "development",
+    entry: {
+        main: "./src/index.js",
+        analytics: "./src/analytics.js"
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist")
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Webpack NDLSS",
+            template: "./src/index.html"
+        })
+    ]
 }

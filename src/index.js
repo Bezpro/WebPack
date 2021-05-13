@@ -1,3 +1,5 @@
+import Post from "./Post"
+
 const post = new Post('Webpack Post Title');
 
-console.log('Post to String', post.toString());
+console.log('Post to String date:', post.toString());
