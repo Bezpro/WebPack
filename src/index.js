@@ -1,5 +1,9 @@
 import Post from "./Post"
 import "./styles/styles.css"
-const post = new Post('Webpack Post Title');
+import json from "./assets/json.json";
+import WebpackLogo from "./assets/webpack-logo.png";
+
+const post = new Post('Webpack Post Title',WebpackLogo);
 
 console.log('Post to String date:', post.toString());
+console.log('JSON:',json);
